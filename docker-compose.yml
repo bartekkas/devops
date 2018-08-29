@@ -85,9 +85,9 @@ services:
     networks:
       - jenkins-net
 
-  slave2:
-      build: ./jenkins-slave2
-      networks:
+  slave2:
+    build: ./jenkins-slave2
+    networks:
       - jenkins-net
 
   proxy:
