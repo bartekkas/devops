@@ -80,7 +80,6 @@ services:
     networks:
       - jenkins-net
       
-
   slave:
     build: ./jenkins-slave
     networks:
@@ -88,6 +87,8 @@ services:
 
   slave2:
       build: ./jenkins-slave2
+      networks:
+      - jenkins-net
 
   proxy:
     build: ./docker-proxy
