@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    stages {
+        stage('Deploy') {
+            parallel {
+                stage('Dev') {
+                    steps {
+                        node('devops_slave_1') {
+                            sh "hostname"
+                        }
+                        node('devops_slave2') {
+                            sh "hostname"
+                        }
+                    }
+               }
+           }
+        }
+    }
+    post {
+            success {
+                echo 'I will always say Hello again!'
+            }
+        }
+}
